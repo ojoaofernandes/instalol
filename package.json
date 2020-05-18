@@ -1,0 +1,41 @@
+{
+  "name": "instalol",
+  "version": "1.0.0",
+  "description": "Searches for LoL match results and generates images to post on Instagram",
+  "keywords": [
+    "leagueoflegends",
+    "instagram"
+  ],
+  "homepage": "https://github.com/ojoaofernandes/instalol#readme",
+  "bugs": {
+    "url": "https://github.com/ojoaofernandes/instalol/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ojoaofernandes/instalol"
+  },
+  "license": "MIT",
+  "author": "Joao Fernandes <ojoaofernandes@gmail.com> (https://www.linkedin.com/in/ojoaofernandes)",
+  "scripts": {
+    "build": "webpack",
+    "lint": "eslint .",
+    "start": "npm run build && node ./dist/index.js",
+    "test": "mocha ./specs",
+    "test:coverage": "nyc npm run test"
+  },
+  "devDependencies": {
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "@babel/register": "7.9.0",
+    "babel-loader": "8.1.0",
+    "chai": "4.2.0",
+    "eslint": "6.8.0",
+    "eslint-config-airbnb-base": "14.1.0",
+    "eslint-plugin-import": "2.20.2",
+    "husky": "4.2.5",
+    "mocha": "7.1.2",
+    "nyc": "15.0.1",
+    "webpack": "4.43.0",
+    "webpack-cli": "3.3.11"
+  }
+}
