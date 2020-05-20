@@ -1,7 +1,13 @@
 {
+  "env": {
+    "mocha": true,
+    "node": true
+  },
   "globals": {
-    "describe": "readonly",
     "expect": "readonly",
-    "it": "readonly"
+    "sinon": "readonly"
+  },
+  "rules": {
+    "no-unused-expressions": "off"
   }
 }

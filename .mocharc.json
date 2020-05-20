@@ -1,4 +1,4 @@
 {
   "recursive": true,
-  "require": ["@babel/register", "chai/register-expect"]
+  "require": ["@babel/register", "chai/register-expect", ".mocha.setup.js"]
 }
