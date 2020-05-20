@@ -1,7 +1,7 @@
 import * as utils from '../../src/utils';
 
 describe('Utils', () => {
-  describe('#isString(str)', () => {
+  describe('#isString', () => {
     context('should return false if', () => {
       it('the type of the parameter is undefined', () => {
         expect(utils.isString(undefined)).to.be.false;
@@ -25,7 +25,7 @@ describe('Utils', () => {
     });
   });
 
-  describe('#isLengthBetween(str, min, max)', () => {
+  describe('#isLengthBetween', () => {
     context('should return false if', () => {
       it('the type of the parameter is not string', () => {
         expect(utils.isLengthBetween(undefined, 0, 1)).to.be.false;
