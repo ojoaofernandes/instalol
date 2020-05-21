@@ -2,7 +2,8 @@ const path = require('path');
 
 module.exports = {
   mode: 'development',
-  entry: './src/index.js',
+  target: 'node',
+  entry: ['regenerator-runtime', './src/index.js'],
   devtool: 'inline-source-map',
   output: {
     filename: 'index.js',
