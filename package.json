@@ -40,5 +40,9 @@
     "sinon-chai": "3.5.0",
     "webpack": "4.43.0",
     "webpack-cli": "3.3.11"
+  },
+  "dependencies": {
+    "dotenv": "8.2.0",
+    "node-fetch": "2.6.0"
   }
 }
