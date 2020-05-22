@@ -1,6 +1,34 @@
 import * as utils from '../../src/utils';
 
 describe('Util Functions', () => {
+  describe('#isNumber', () => {
+    context('should return false if', () => {
+      it('the type of the parameter is undefined', () => {
+        expect(utils.isNumber(undefined)).to.be.false;
+      });
+
+      it('the type of the parameter is null', () => {
+        expect(utils.isNumber(null)).to.be.false;
+      });
+
+      it('the type of the parameter is boolean', () => {
+        expect(utils.isNumber(false)).to.be.false;
+      });
+
+      it('the type of the parameter is object', () => {
+        expect(utils.isNumber({})).to.be.false;
+      });
+
+      it('the type of the parameter is String', () => {
+        expect(utils.isNumber('1')).to.be.false;
+      });
+    });
+
+    it('should return true if the type of the parameter is number', () => {
+      expect(utils.isNumber(1)).to.be.true;
+    });
+  });
+
   describe('#isString', () => {
     context('should return false if', () => {
       it('the type of the parameter is undefined', () => {

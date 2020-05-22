@@ -1,4 +1,14 @@
 /**
+ * Checks if `value` is classified as a `number` primitive.
+ *
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a number, else `false`.
+ */
+export function isNumber(value) {
+  return typeof value === 'number';
+}
+
+/**
  * Checks if `value` is classified as a `String` primitive or object.
  *
  * @param {*} value The value to check.
