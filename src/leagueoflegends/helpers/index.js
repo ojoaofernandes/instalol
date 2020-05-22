@@ -1,4 +1,4 @@
-import { isString, isLengthBetween } from '../../utils';
+import { isNumber, isString, isLengthBetween } from '../../utils';
 
 export const NAME_MIN_LENGTH = 3;
 export const NAME_MAX_LENGTH = 16;
@@ -35,5 +35,22 @@ export function validateAccountId(accountId) {
 
   if (accountId.length !== ACCOUNT_ID_LENGTH) {
     throw new RangeError(`The length of accountId should be ${ACCOUNT_ID_LENGTH}`);
+  }
+}
+
+/**
+ * Validates the match ID according to assumed requirements.
+ *
+ * @param {number} matchId The match ID.
+ * @throws {TypeError} The match ID must be a number.
+ * @throws {RangeError} The match ID must be a positive number.
+ */
+export function validateMatchId(matchId) {
+  if (!isNumber(matchId)) {
+    throw new TypeError('The type of matchId should be number');
+  }
+
+  if (matchId <= 0) {
+    throw new RangeError('The matchId must be greater than 0');
   }
 }

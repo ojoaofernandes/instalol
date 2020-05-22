@@ -4,6 +4,7 @@ import * as utils from '../../../src/utils';
 describe('LOL - Helper Functions', () => {
   const validSummonerName = 'qwerty';
   const validAccountId = 'zMZ45BJ1o_acCFqVSnG-vzh1ZDe53uweNAD4JriPyy-TQkr1PfJr51-1';
+  const validMatchId = 1952096670;
 
   afterEach(() => {
     sinon.restore();
@@ -75,6 +76,36 @@ describe('LOL - Helper Functions', () => {
     it('should not throw RangeError if the account ID length is 56', () => {
       sinon.stub(utils, 'isLengthBetween').returns(true);
       expect(helpers.validateAccountId.bind(null, validAccountId))
+        .not.to.throw(RangeError);
+    });
+  });
+
+  describe('#validateMatchId', () => {
+    it('should call utils#isNumber with the correct parameter', () => {
+      const spy = sinon.spy(utils, 'isNumber');
+      helpers.validateMatchId(validMatchId);
+      expect(spy).to.have.been.calledWith(validMatchId);
+    });
+
+    it('should throw TypeError if utils#isNumber returns false', () => {
+      sinon.stub(utils, 'isNumber').returns(false);
+      expect(helpers.validateMatchId).to.throw(TypeError);
+    });
+
+    it('should not throw TypeError if utils#isNumber returns true', () => {
+      sinon.stub(utils, 'isNumber').returns(true);
+      expect(helpers.validateMatchId.bind(null, validMatchId))
+        .not.to.throw(TypeError);
+    });
+
+    it('should throw RangeError if the match ID is not greater than 0', () => {
+      sinon.stub(utils, 'isNumber').returns(true);
+      expect(helpers.validateMatchId.bind(null, '')).to.throw(RangeError);
+    });
+
+    it('should not throw RangeError if the match ID is greater than 0', () => {
+      sinon.stub(utils, 'isLengthBetween').returns(true);
+      expect(helpers.validateMatchId.bind(null, validMatchId))
         .not.to.throw(RangeError);
     });
   });
