@@ -1,7 +1,8 @@
 import { isString, isLengthBetween } from '../../utils';
 
-export const MIN_NAME_LENGTH = 3;
-export const MAX_NAME_LENGTH = 16;
+export const NAME_MIN_LENGTH = 3;
+export const NAME_MAX_LENGTH = 16;
+export const ACCOUNT_ID_LENGTH = 56;
 
 /**
  * Validates the summoner name according to Riot's requirements.
@@ -15,7 +16,7 @@ export function validateSummonerName(summonerName) {
     throw new TypeError('The type of summonerName should be string');
   }
 
-  if (!isLengthBetween(summonerName, MIN_NAME_LENGTH, MAX_NAME_LENGTH)) {
-    throw new RangeError(`The length of summonerName should be between ${MIN_NAME_LENGTH} e ${MAX_NAME_LENGTH}`);
+  if (!isLengthBetween(summonerName, NAME_MIN_LENGTH, NAME_MAX_LENGTH)) {
+    throw new RangeError(`The length of summonerName should be between ${NAME_MIN_LENGTH} e ${NAME_MAX_LENGTH}`);
   }
 }

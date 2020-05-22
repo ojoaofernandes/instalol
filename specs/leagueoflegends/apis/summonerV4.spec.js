@@ -1,5 +1,5 @@
 import * as api from '../../../src/leagueoflegends/apis/summonerV4';
-import * as summonerHelper from '../../../src/leagueoflegends/helpers/summoner';
+import * as helpers from '../../../src/leagueoflegends/helpers';
 import * as http from '../../../src/leagueoflegends/transports/http';
 
 describe('Summoner API V4', () => {
@@ -11,7 +11,7 @@ describe('Summoner API V4', () => {
 
   describe('#getSummonerByName', () => {
     it('should validate the summoner name', () => {
-      const spy = sinon.spy(summonerHelper, 'validateSummonerName');
+      const spy = sinon.spy(helpers, 'validateSummonerName');
       api.getSummonerByName(validSummonerName);
       expect(spy).to.have.been.called;
     });
