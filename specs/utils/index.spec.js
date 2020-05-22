@@ -1,6 +1,6 @@
 import * as utils from '../../src/utils';
 
-describe('Utils', () => {
+describe('Util Functions', () => {
   describe('#isString', () => {
     context('should return false if', () => {
       it('the type of the parameter is undefined', () => {

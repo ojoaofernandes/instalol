@@ -1,7 +1,7 @@
 import * as fetch from 'node-fetch';
 import { API_URL, get } from '../../../src/leagueoflegends/transports/http';
 
-describe('HTTP Transport', () => {
+describe('LOL - HTTP Transport', () => {
   const path = 'path/to/resource';
   let spy;
 

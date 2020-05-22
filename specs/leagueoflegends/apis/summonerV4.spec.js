@@ -2,7 +2,7 @@ import * as api from '../../../src/leagueoflegends/apis/summonerV4';
 import * as helpers from '../../../src/leagueoflegends/helpers';
 import * as http from '../../../src/leagueoflegends/transports/http';
 
-describe('Summoner API V4', () => {
+describe('LOL - Summoner API V4', () => {
   const validSummonerName = 'qwerty';
 
   afterEach(() => {

@@ -1,7 +1,7 @@
 import * as helpers from '../../../src/leagueoflegends/helpers';
 import * as utils from '../../../src/utils';
 
-describe('Summoner Helper', () => {
+describe('LOL - Helper Functions', () => {
   const validSummonerName = 'qwerty';
   const validAccountId = 'zMZ45BJ1o_acCFqVSnG-vzh1ZDe53uweNAD4JriPyy-TQkr1PfJr51-1';
 
