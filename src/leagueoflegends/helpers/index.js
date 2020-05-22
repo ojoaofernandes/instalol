@@ -20,3 +20,20 @@ export function validateSummonerName(summonerName) {
     throw new RangeError(`The length of summonerName should be between ${NAME_MIN_LENGTH} e ${NAME_MAX_LENGTH}`);
   }
 }
+
+/**
+ * Validates the account ID according to Riot's requirements.
+ *
+ * @param {String} accountId The encrypted account ID.
+ * @throws {TypeError} The account ID must be a string.
+ * @throws {RangeError} The account ID length must be 56.
+ */
+export function validateAccountId(accountId) {
+  if (!isString(accountId)) {
+    throw new TypeError('The type of accountId should be string');
+  }
+
+  if (accountId.length !== ACCOUNT_ID_LENGTH) {
+    throw new RangeError(`The length of accountId should be ${ACCOUNT_ID_LENGTH}`);
+  }
+}
